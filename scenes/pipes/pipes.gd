@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var score_sound = $ScoreSound
 
 func _ready():
 	SignalManager.on_plane_died.connect(on_plane_died)
@@ -16,7 +17,7 @@ func _on_screen_exited():
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER) == true:
 		ScoreManager.increment_score()
-		print("Point Scored")
+		score_sound.play()
 
 func _on_pipe_body_entered(body):
 	if body.is_in_group("player") == true:
