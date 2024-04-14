@@ -10,6 +10,7 @@ extends Node2D
 func _ready():
 	SignalManager.on_plane_died.connect(_on_plane_died)
 	spawn_pipes()
+	ScoreManager.set_score(0)
 	
 func _process(delta):
 	pass
