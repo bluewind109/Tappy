@@ -15,6 +15,7 @@ func _on_screen_exited():
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER) == true:
+		ScoreManager.increment_score()
 		print("Point Scored")
 
 func _on_pipe_body_entered(body):
