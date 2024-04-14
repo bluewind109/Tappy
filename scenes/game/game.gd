@@ -8,6 +8,7 @@ extends Node2D
 
 
 func _ready():
+	SignalManager.on_plane_died.connect(_on_plane_died)
 	spawn_pipes()
 	
 func _process(delta):
@@ -25,9 +26,6 @@ func spawn_pipes() -> void:
 # Stop all the pipes
 func stop_pipes() -> void:
 	spawn_timer.stop()
-	var pipes = get_tree().get_nodes_in_group("pipes") # Get all the pipes in scene
-	for pipe in pipes:
-		pipe.set_process(false) # Stop the pipe from moving
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()
