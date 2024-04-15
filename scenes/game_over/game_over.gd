@@ -11,7 +11,7 @@ func _ready():
 	SignalManager.on_plane_died.connect(on_plane_died)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if label_space.visible == true:
 		if Input.is_action_just_pressed("fly") == true:
 			GameManager.load_main_scene()

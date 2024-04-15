@@ -15,7 +15,3 @@ func _ready():
 	sprite_2d.texture = texture
 	sprite_2d.scale = Vector2(scale_f, scale_f)
 	motion_mirroring.x = tx_x * scale_f
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

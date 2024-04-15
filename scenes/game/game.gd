@@ -12,9 +12,6 @@ func _ready():
 	spawn_pipes()
 	ScoreManager.set_score(0)
 	
-func _process(delta):
-	pass
-	
 func spawn_pipes() -> void:
 	var new_pipes = pipes_scene.instantiate()
 	var y_pos = randf_range(
