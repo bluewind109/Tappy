@@ -9,13 +9,16 @@ func _ready():
 	
 func _process(delta):
 	position.x -= GameManager.SCROLL_SPEED * delta
+	if (position.x < -100):
+		queue_free()
 
 func on_plane_died() -> void:
 	_plane_died = true
 	set_process(false)
 
 func _on_screen_exited():
-	queue_free()
+	#queue_free()
+	pass
 
 func _on_laser_body_exited(body):
 	if _plane_died == true: return
