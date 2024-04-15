@@ -20,7 +20,7 @@ func _on_laser_body_exited(body):
 		score_sound.play()
 
 func _on_pipe_body_entered(body):
-	if body.is_in_group("player") == true:
-		print("Plane Hit Pipe: ", body)
-		if body.has_method("die") == true:
-			body.die()
+	print("_on_pipe_body_entered: ", body)
+	#if body.is_in_group(GameManager.GROUP_PLAYER) == true:
+	if body.has_method("die") == true:
+		body.die()
